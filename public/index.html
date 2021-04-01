@@ -33,11 +33,17 @@
   var list = document.getElementsByClassName("navbutton");
   console.log(list);
   for (var i = 0; i < list.length; i++) {
-    console.log("listener toegevoegd");
-    list[i].addEventListener("click", function () {
+    if(i != list.length - 1){
+      list[i].addEventListener("click", function () {
       setTimeout(() => {window.scrollBy(0,-30)}, 0.1);
       console.log("scroll activated");
     }, false);
+    }else{
+      list[i].addEventListener("click", function () {
+      setTimeout(() => {window.scrollBy(0,-50)}, 0.1);
+      console.log("scroll activated");
+    }, false);
+    }
   }
 </script>
 
