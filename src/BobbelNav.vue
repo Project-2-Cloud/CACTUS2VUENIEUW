@@ -83,6 +83,7 @@
                 >Shop
               </a>
             </li>
+            <li class="nav-item mx-0 mx-lg-1"><OrderList /></li>
 
             <router-link
               to="/"
@@ -93,25 +94,15 @@
             >
               <a @click="onLoginClicked" class="nav-link">Login</a>
             </router-link>
+
+            <li class="li-pointer nav-item">
+              <OrderList />
+            </li>
+
             <li v-if="isAuthenticated" class="li-pointer nav-item">
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  {{ getUserName() }}
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <OrderList />
-                  <a @click="onLogoutClicked" class="dropdown-item"
-                    >Logout {{ userEmail }}</a
-                  >
-                </div>
-              </div>
+            <a @click="onLogoutClicked" class="dropdown-item"
+            >Logout {{ userEmail }}</a
+            >
             </li>
             <li style="margin-left: 2rem;">
               <ShoppingCart />
