@@ -23,7 +23,7 @@ export default {
     },
     isAuthenticated() {
       return this.$store.state.user.isAuthenticated;
-    },
+    }, 
   },
   mounted(){
     this.$store.commit("setUrls");
