@@ -33,14 +33,14 @@
   var list = document.getElementsByClassName("navbutton");
   console.log(list);
   for (var i = 0; i < list.length; i++) {
-    if(i != list.length - 1){
+    if(!list[i].innerHTML.includes("Shop")){
       list[i].addEventListener("click", function () {
       setTimeout(() => {window.scrollBy(0,-30)}, 0.1);
       console.log("scroll activated");
     }, false);
     }else{
       list[i].addEventListener("click", function () {
-      setTimeout(() => {window.scrollBy(0,-50)}, 0.1);
+      setTimeout(() => {window.scrollBy(0,-200)}, 0.1);
       console.log("scroll activated");
     }, false);
     }
