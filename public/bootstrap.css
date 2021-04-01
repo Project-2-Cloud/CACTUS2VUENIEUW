@@ -5488,9 +5488,7 @@ a.close.disabled {
 }
 .modal-backdrop.fade {
   opacity: 0;
-}
-.modal-backdrop.show {
-  opacity: 0.5;
+  z-index: -500;
 }
 
 .modal-header {

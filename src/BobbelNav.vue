@@ -113,7 +113,7 @@
                 </div>
               </div>
             </li>
-            <li style = "margin-left: 4 rem;">
+            <li style="margin-left: 2rem;">
               <ShoppingCart />
             </li>
           </ul>
