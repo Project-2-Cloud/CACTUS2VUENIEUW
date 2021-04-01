@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a v-if="isAuthenticated" class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#orderList"
+    <a v-if="isAuthenticated" class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger navbutton" data-toggle="modal" data-target="#orderList"
     >My orders </a
     >
     <div id="orderList" class="modal fade">

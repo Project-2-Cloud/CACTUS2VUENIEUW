@@ -83,8 +83,6 @@
                 >Shop
               </a>
             </li>
-            <li class="nav-item mx-0 mx-lg-1"><OrderList /></li>
-
             <router-link
               to="/"
               tag="li"
@@ -95,7 +93,7 @@
               <a @click="onLoginClicked" class="nav-link">Login</a>
             </router-link>
 
-            <li class="li-pointer nav-item">
+            <li class="nav-item mx-0 mx-lg-1">
               <OrderList />
             </li>
 
