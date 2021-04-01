@@ -93,13 +93,13 @@
               <a @click="onLoginClicked" class="nav-link">Login</a>
             </router-link>
 
-            <li class="nav-item mx-0 mx-lg-1">
+            <li v-if = false class="nav-item mx-0 mx-lg-1">
               <OrderList />
             </li>
 
             <li v-if="isAuthenticated" class="nav-item mx-0 mx-lg-1">
             <a @click="onLogoutClicked" class="nav-link py-3 px-0 px-lg-3 rounded"
-            >Logout {{ userEmail }}</a
+            >Logout {{ this.$store.state.user.email }}</a
             >
             </li>
             <li style="margin-left: 2rem;">
@@ -139,11 +139,11 @@ export default {
   components: { ShoppingCart, OrderList },
   name: "NavHeader",
   computed: {
-    userEmail() {
-      return this.isLoggedIn ? this.currentUser.email : "";
-    },
     isAuthenticated() {
       return this.$store.state.user.isAuthenticated;
+    },
+    userEmail() {
+      return this.isAuthenticated ? this.currentUser.email : "";
     },
   },
   methods: {

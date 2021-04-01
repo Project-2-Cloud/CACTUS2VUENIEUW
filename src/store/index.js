@@ -12,6 +12,7 @@ export default new Vuex.Store({
   state: {
     products: [],
     inCart: [],
+    orders: [],
     user: {
       isAuthenticated: false,
       name: "",
@@ -27,11 +28,15 @@ export default new Vuex.Store({
    getters: {
     products: state => state.products,
     inCart: state => state.inCart,
+   inOrders: state => state.orders,
    },
    mutations: { //synchronous
      setProducts(state, payload) {
        state.products = payload;
      },
+   setOrders(state, payload) {
+       state.orders = payload;
+   },
      addToCart(state, payload) { 
       console.log(payload);
       state.inCart.push(payload);
@@ -66,7 +71,15 @@ export default new Vuex.Store({
        const prods = await products.json();
        state.commit("setProducts", prods);
        console.log(prods);
-     }
+     },
+   async getOrders(state) {
+       let url = this.$store.state.endpoints.orders;
+       let headers = { Accept: "application/json" };
+       const products = await fetch(url, { headers });
+       const prods = await products.json();
+       state.commit("setOrders", prods);
+       console.log(prods);
+   }
    },
   modules: {
   }

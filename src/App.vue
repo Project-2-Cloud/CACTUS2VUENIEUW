@@ -28,6 +28,7 @@ export default {
   mounted(){
     this.$store.commit("setUrls");
     this.$store.dispatch("getProducts");
+    this.$store.dispatch("getOrders");
   },
   methods: {
     onLoginClicked() {

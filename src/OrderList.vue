@@ -49,20 +49,14 @@ export default {
       isAuthenticated() {
         return this.$store.state.user.isAuthenticated;
       },
-      userId(){
-        return this.$store.state.user.idToken;
+
+      inCart() {
+        return this.$store.getters.inOrders;
       },
 
   },
   methods: {
-    async getProducts(state) {
-      let url = this.$store.state.endpoints.orders;
-      let headers = { Accept: "application/json" };
-      const products = await fetch(url+"/"+this.userId, { headers });
-      const prods = await products.json();
-      state.commit("setProducts", prods);
-      console.log(prods);
-    }
+
 
   }
 };
