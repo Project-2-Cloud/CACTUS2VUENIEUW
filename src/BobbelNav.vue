@@ -106,7 +106,7 @@
                   {{ getUserName() }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">MY ORDERS</a>
+                  <OrderList />
                   <a @click="onLogoutClicked" class="dropdown-item"
                     >Logout {{ userEmail }}</a
                   >
@@ -145,8 +145,9 @@
 
 <script>
 import ShoppingCart from "./ShoppingCart.vue";
+import OrderList from "./OrderList.vue";
 export default {
-  components: { ShoppingCart },
+  components: { ShoppingCart, OrderList },
   name: "NavHeader",
   computed: {
     userEmail() {
