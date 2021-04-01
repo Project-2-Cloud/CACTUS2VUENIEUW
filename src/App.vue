@@ -12,7 +12,7 @@
 import Navigation from './BobbelNav.vue';
 import Main from './BobbelMain';
 import Footer from './BobbelFooter';
-import Shop from './views/Shop.vue'
+import Shop from './views/Shop.vue';
 
 export default {
   components: {Navigation, Main, Shop, Footer},
@@ -24,6 +24,10 @@ export default {
     isAuthenticated() {
       return this.$store.state.user.isAuthenticated;
     },
+  },
+  mounted(){
+    this.$store.commit("setUrls");
+    this.$store.dispatch("getProducts");
   },
   methods: {
     onLoginClicked() {

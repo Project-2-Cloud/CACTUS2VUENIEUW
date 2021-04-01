@@ -54,6 +54,7 @@ export default new Vuex.Store({
        console.log(process.env);
        state.endpoints.login = process.env.VUE_APP_AUTH_URL;
        state.endpoints.products = process.env.VUE_APP_PRODUCTS_URL;
+       console.log(state.endpoints);
        url = state.endpoints.products;
      }
    },
