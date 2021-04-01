@@ -3,8 +3,10 @@
     * Copyright 2013-2020 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-freelancer/blob/master/LICENSE)
     */
+
     (function($) {
     "use strict"; // Start of use strict
+
   
     // Smooth scrolling using jQuery easing
     $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
@@ -40,6 +42,13 @@
       target: '#mainNav',
       offset: 80
     });
+
+    /*
+    var scrollSpy = new bootstrap.Scrollspy(document.body, {
+      target: '#mainNav',
+      offset: 80
+    })
+    */
   
     // Collapse Navbar
     var navbarCollapse = function() {
