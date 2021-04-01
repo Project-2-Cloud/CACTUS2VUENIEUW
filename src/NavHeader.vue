@@ -14,7 +14,7 @@
               {{ getUserName() }}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="#">Account Settings</a>
+              <a class="dropdown-item" href="#">My Orders</a>
               <a @click="onLogoutClicked" class="dropdown-item">Logout {{ userEmail }}</a>
             </div>
           </div>
