@@ -1,15 +1,15 @@
 <template>
   <div id="shop">
-    <NavHeader />
+    <LandingPage />
     <router-view/>
   </div>
 </template>
 
 <script>
-import NavHeader from "@/LandingPage.vue"
+import LandingPage from "@/LandingPage.vue"
 export default {
   components: {
-    NavHeader
+    LandingPage
   },
   
   mounted(){

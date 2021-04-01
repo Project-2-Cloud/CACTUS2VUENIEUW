@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="shopscroll">
     <div class="container">
       <div class="row">
         <Item v-for="product in products" 
@@ -14,7 +14,7 @@
 // @ is an alias to /src
 import Item from "@/Item.vue"  
 export default {
-  name: 'Home',
+  name: 'Shop',
   computed: {
     products() {
       return this.$store.state.products;
