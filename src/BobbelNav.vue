@@ -1,6 +1,6 @@
 <template>
   <div>
-      <head>
+    <head>
       <meta charset="UTF-8" />
       <meta
         name="viewport"
@@ -84,16 +84,34 @@
               </a>
             </li>
 
-            <li class="nav-item mx-0 mx-lg-1">
-              <router-link
-                to="/"
-                tag="li"
-                v-if="!isAuthenticated"
-                class="nav-item"
-                active-class="active"
-              >
-                <a @click="onLoginClicked" class="nav-link">Login</a>
-              </router-link>
+            <router-link
+              to="/"
+              tag="li"
+              v-if="!isAuthenticated"
+              class="nav-item"
+              active-class="active"
+            >
+              <a @click="onLoginClicked" class="nav-link">Login</a>
+            </router-link>
+            <li v-if="isAuthenticated" class="li-pointer nav-item">
+              <div class="dropdown">
+                <button
+                  class="btn btn-secondary dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  {{ getUserName() }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Account Settings</a>
+                  <a @click="onLogoutClicked" class="dropdown-item"
+                    >Logout {{ userEmail }}</a
+                  >
+                </div>
+              </div>
             </li>
             <li>
               <ShoppingCart />
@@ -103,23 +121,25 @@
       </div>
     </nav>
     <header class="masthead bg-primary text-white text-center">
-    <div class="container d-flex align-items-center flex-column">
+      <div class="container d-flex align-items-center flex-column">
         <!-- Masthead Avatar Image-->
         <!-- Masthead Heading-->
         <h1 class="masthead-heading text-uppercase mb-0">Bobbel</h1>
         <!-- Icon Divider-->
         <div class="divider-custom divider-light">
-            <div class="divider-custom-line"></div>
-            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-            <div class="divider-custom-line"></div>
+          <div class="divider-custom-line"></div>
+          <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+          <div class="divider-custom-line"></div>
         </div>
         <!-- Masthead Subheading-->
-        <p class="masthead-subheading font-weight-light mb-0">That's what all the FIZZ is about!</p>
+        <p class="masthead-subheading font-weight-light mb-0">
+          That's what all the FIZZ is about!
+        </p>
         <a href="#shopscroll">
-            <button class="btn btn-homePage btn-lg">BUY NOW</button>
+          <button class="btn btn-homePage btn-lg">BUY NOW</button>
         </a>
-    </div>
-</header>
+      </div>
+    </header>
   </div>
 </template>
 
