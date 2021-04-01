@@ -47,6 +47,9 @@
 export default {
   name: 'ShoppingCart',
   computed: {
+    userId(){
+      return this.$store.state.user.idToken;
+    },
     inCart() { 
       return this.$store.getters.inCart; 
     },
@@ -68,6 +71,14 @@ export default {
       if (this.isAuthenticated) {
         if (this.numInCart == 0) {
           alert('Your cart is empty!');
+          return
+        } else {
+          //actual valid order
+          var cartjson = JSON.stringify(this.inCart, this.userId);
+          var xhr = new XMLHttpRequest();
+          xhr.open("POST", "http://back-end-orders-ucllteam02.ocp-ucll-40cb0df2b03969eabb3fac6e80373775-0000.eu-de.containers.appdomain.cloud/add", true);
+          xhr.setRequestHeader('Content-Type', 'application/json');
+          xhr.send(cartjson);
           return
         }    
       } else {
