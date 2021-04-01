@@ -1,10 +1,9 @@
 <template>
   <div>
-    <button class="btn btn-primary navbar-btn" data-toggle="modal" data-target="#orderList">
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      ( {{ numInCart }} )
-    </button>
-    <div id="shoppingCart" class="modal fade">
+    <a @click="onLogoutClicked" class="dropdown-item"
+    >My orders </a
+    >
+    <div id="orderList" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
@@ -64,9 +63,7 @@ export default {
     },
   },
   methods: {
-    removeFromCart(item) {
-      this.$store.commit('removeFromCart', item);
-    },
+
   }
 };
 </script>
