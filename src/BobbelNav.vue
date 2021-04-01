@@ -99,7 +99,7 @@
 
             <li v-if="isAuthenticated" class="nav-item mx-0 mx-lg-1">
             <a @click="onLogoutClicked" class="nav-link py-3 px-0 px-lg-3 rounded"
-            >Logout \\n {{ this.$store.state.user.name }}</a
+            >{{ this.$store.state.user.name }} logout</a
             >
             </li>
             <li style="margin-left: 2rem;">
