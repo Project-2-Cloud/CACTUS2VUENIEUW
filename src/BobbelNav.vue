@@ -97,8 +97,8 @@
               <OrderList />
             </li>
 
-            <li v-if="isAuthenticated" class="li-pointer nav-item">
-            <a @click="onLogoutClicked" class="dropdown-item"
+            <li v-if="isAuthenticated" class="nav-item mx-0 mx-lg-1">
+            <a @click="onLogoutClicked" class="nav-link py-3 px-0 px-lg-3 rounded"
             >Logout {{ userEmail }}</a
             >
             </li>

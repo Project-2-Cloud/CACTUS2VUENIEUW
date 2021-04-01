@@ -45,24 +45,24 @@
 export default {
   name: 'OrderList',
   computed: {
-      userId(){
-        return this.$store.state.user.idToken;
-      },
-      inCart() {
-        return this.$store.getters.inCart;
-      },
-      numInCart() {
-        return this.inCart.length;
-      },
-      total() {
-        return this.inCart.reduce((acc, cur) => acc + cur.price, 0);
-      },
+
       isAuthenticated() {
         return this.$store.state.user.isAuthenticated;
+      },
+      userId(){
+        return this.$store.state.user.idToken;
       },
 
   },
   methods: {
+    async getProducts(state) {
+      let url = this.$store.state.endpoints.orders;
+      let headers = { Accept: "application/json" };
+      const products = await fetch(url+"/"+this.userId, { headers });
+      const prods = await products.json();
+      state.commit("setProducts", prods);
+      console.log(prods);
+    }
 
   }
 };
