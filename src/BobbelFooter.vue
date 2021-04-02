@@ -14,7 +14,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <form id="contactForm" @submit.prevent="sendEmail" name="sentMessage" novalidate="novalidate">
+            <form id="contactForm" name="sentMessage" novalidate="novalidate">
               <div class="control-group">
                 <div
                   class="form-group floating-label-form-group controls mb-0 pb-2"
@@ -40,8 +40,6 @@
                     class="form-control"
                     id="email"
                     type="email"
-                          v-model="email"
-                      name="email"
                     placeholder="Email Address"
                     required="required"
                     data-validation-required-message="Please enter your email address."
@@ -75,8 +73,6 @@
                     id="message"
                     rows="5"
                     placeholder="Message"
-                         v-model="message"
-                      name="message"
                     required="required"
                     data-validation-required-message="Please enter a message."
                   ></textarea>
@@ -140,27 +136,14 @@
 </template>
 
 <script>
-  methods: {
-    sendEmail(e) {
-      console.log(this.name)
-      console.log(this.name)
-      console.log(this.message)
-      try {
-        emailjs.sendForm('service_d3t3vsb', 'template_l3rdsvm', e.target,
-            'user_J45fxBwryC5sxXo7gzuKp', {
-              name: this.name,
-              email: this.email,
-              message: this.message
-            })
-
-      } catch (error) {
-        console.log({error})
-      }
-      // Reset form field
-      this.name = ''
-      this.email = ''
-      this.message = ''
+export default {
+  components: {},
+  name: "Footer",
+  computed: {
+    userEmail() {
+      return this.isLoggedIn ? this.currentUser.email : "";
     },
-  }
-}
+    methods: {},
+  },
+};
 </script>
